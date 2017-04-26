@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-tT-E4X">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcO-MV-MDe">
+                                <rect key="frame" x="567" y="325" width="80" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-7n-h4o">
+                                        <rect key="frame" x="18.5" y="-2" width="43" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="PLAY"/>
+                                        <connections>
+                                            <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7MU-qc-ZOr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="hEP-1Y-XHz"/>
+                                    <constraint firstItem="lGf-7n-h4o" firstAttribute="centerY" secondItem="zcO-MV-MDe" secondAttribute="centerY" id="uW0-kg-i4f"/>
+                                    <constraint firstItem="lGf-7n-h4o" firstAttribute="centerX" secondItem="zcO-MV-MDe" secondAttribute="centerX" id="yfY-tF-3FQ"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vU5-p5-tdj">
+                                <rect key="frame" x="18" y="325" width="531" height="31"/>
+                                <connections>
+                                    <action selector="sliderEditingStarted:" destination="BYZ-38-t0r" eventType="touchDown" id="NXp-2u-dKv"/>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8D-90-gIH"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Aej-tT-E4X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Xx-qh-lu2"/>
+                            <constraint firstAttribute="bottom" secondItem="zcO-MV-MDe" secondAttribute="bottom" constant="20" id="EBY-kR-63Q"/>
+                            <constraint firstItem="zcO-MV-MDe" firstAttribute="leading" secondItem="vU5-p5-tdj" secondAttribute="trailing" constant="20" id="FeL-Wy-5ya"/>
+                            <constraint firstItem="vU5-p5-tdj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="JEs-Iq-DGl"/>
+                            <constraint firstAttribute="trailing" secondItem="Aej-tT-E4X" secondAttribute="trailing" id="KMA-ho-rut"/>
+                            <constraint firstItem="zcO-MV-MDe" firstAttribute="bottom" secondItem="vU5-p5-tdj" secondAttribute="bottom" id="LcN-DG-CkO"/>
+                            <constraint firstAttribute="trailing" secondItem="zcO-MV-MDe" secondAttribute="trailing" constant="20" id="TZb-RW-toi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Aej-tT-E4X" secondAttribute="bottom" id="Vr2-UX-e1R"/>
+                            <constraint firstItem="Aej-tT-E4X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="avK-om-HXy"/>
+                            <constraint firstItem="zcO-MV-MDe" firstAttribute="top" secondItem="vU5-p5-tdj" secondAttribute="top" id="uuw-ed-kt8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="lGf-7n-h4o" id="BoA-yt-hFU"/>
+                        <outlet property="playButtonContainer" destination="zcO-MV-MDe" id="Jtm-IE-UJJ"/>
+                        <outlet property="playerHolder" destination="Aej-tT-E4X" id="EJe-L5-pNW"/>
+                        <outlet property="timeSlider" destination="vU5-p5-tdj" id="ywm-9V-rFe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.18140929535232" y="136.80000000000001"/>
+        </scene>
+    </scenes>
+</document>
